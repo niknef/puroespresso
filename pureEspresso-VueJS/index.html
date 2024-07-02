@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/vpo1pac.css">
+    <title>PuroEspresso</title>
+    <script src="./scripts/vue.js"></script>
+    <script src="./scripts/vue2-filters.js"></script>
+    <link rel="stylesheet" href="src/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    
+</head>
+<body class="bg-dark">
+    <div class="app" v-cloak>
+      <navbar-component @toggle-modal="toggleModal"></navbar-component>
+      <main>
+          <banner-component @toggle-modal="toggleModal"></banner-component>
+          <modal-component :modalvisible="modalvisible" @close-modal="closeModal" @form-submitted="handleFormSubmission"></modal-component>
+          <modal-gracias v-if="completed" :usuarios="usuarios" :completed="completed" :alerta="alerta" @close-modal="closeModal"></modal-gracias>
+          <divider-component></divider-component>
+          <packs-component :packs="packs"></packs-component>
+          <divider-component></divider-component>
+          <nosotros-component></nosotros-component>
+          <divider-component></divider-component>
+          <products-component :products="products"></products-component>
+          <coffees-component v-if="preferenciaseleccionada" :coffees="filteredCoffees"></coffees-component>
+      </main>
+      <footer-component></footer-component>
+    </div>
+  <script src="./scripts/app.js"></script>
+</body>
+</html>
