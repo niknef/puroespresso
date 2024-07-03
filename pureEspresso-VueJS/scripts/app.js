@@ -201,7 +201,7 @@ Vue.component('modal-gracias', {
                     <div class="modal-body text-center content-modal-gracias">
                         <div class="bienvenido mx-auto my-2"></div>
                         <h3 class="fw-bold">{{alerta}}</h3>
-                        <h4 class="fw-bold">Pack = {{usuarios[0].subscription | capitalize}}</h4>
+                        <h4 class="fw-bold">{{usuarios[0].subscription | capitalize}} Pack</h4>
                         <p class="lead fw-bold">Recibirás un correo de confirmación con los detalles de tu suscripción al siguiente E-mail: {{usuarios[0].email | capitalize}}</p>
                         <p class="fw-bold">¡Gracias por formar parte de nuestra comunidad de amantes por el café, en nuestra página encontraras una recomendación especial para tí!</p>
                     </div> 
